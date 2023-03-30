@@ -1,22 +1,22 @@
-<mxfile host="app.diagrams.net" modified="2023-03-29T16:59:56.270Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/111.0" etag="y4NqZv5gRtp5CnPUUZ3y" version="21.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-30T19:41:21.550Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/111.0" etag="wBTUR_s6Ix2kY_wTMa8b" version="21.1.2" type="github">
   <diagram name="Страница 1" id="ZP4QO46VL0Z94R9wZLWI">
-    <mxGraphModel dx="954" dy="642" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1272" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="8d3mzSMaxlzWqDahnA18-6" value="Модуль целей" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="680" y="280" width="110" height="50" as="geometry" />
+          <mxGeometry x="670" y="230" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="8d3mzSMaxlzWqDahnA18-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=diamond;endFill=1;" parent="1" source="8d3mzSMaxlzWqDahnA18-8" target="8d3mzSMaxlzWqDahnA18-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="8d3mzSMaxlzWqDahnA18-8" value="Объект цели" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="680" y="380" width="110" height="50" as="geometry" />
+          <mxGeometry x="670" y="330" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="8d3mzSMaxlzWqDahnA18-10" value="Модуль контроля бюджета" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="91" y="270" width="110" height="50" as="geometry" />
+          <mxGeometry x="91" y="268" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="8d3mzSMaxlzWqDahnA18-11" value="Интерфейс универсального постоянного расхода" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="8d3mzSMaxlzWqDahnA18-11" value="Интерфейс постоянного расхода" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="60" y="439" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="8d3mzSMaxlzWqDahnA18-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;strokeColor=default;dashed=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="8d3mzSMaxlzWqDahnA18-12" target="8d3mzSMaxlzWqDahnA18-11" edge="1">
@@ -61,8 +61,43 @@
         <mxCell id="8d3mzSMaxlzWqDahnA18-21" value="Остальное" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="307.5" y="168" width="66.5" height="50" as="geometry" />
         </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=diamondThin;endFill=1;" edge="1" parent="1" source="8d3mzSMaxlzWqDahnA18-26" target="8d3mzSMaxlzWqDahnA18-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="8d3mzSMaxlzWqDahnA18-26" value="Объект категории" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="264" y="270" width="110" height="50" as="geometry" />
+          <mxGeometry x="264" y="268" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-1" value="Пользователь" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="73" width="100" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-2" value="Интерфейс постоянного дохода" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="440" width="112" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-3" value="Объект одноразового дохода" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="550" y="439" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.391;exitY=-0.08;exitDx=0;exitDy=0;dashed=1;exitPerimeter=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="lyk_XS_WcnhYMRPYFa0G-4" target="lyk_XS_WcnhYMRPYFa0G-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="432" y="502" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-4" value="Универсальный постоянный доход" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="350" y="539" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="lyk_XS_WcnhYMRPYFa0G-5" target="lyk_XS_WcnhYMRPYFa0G-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-5" value="Вклад" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="470" y="539" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.83;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="lyk_XS_WcnhYMRPYFa0G-7" target="lyk_XS_WcnhYMRPYFa0G-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-7" value="Дивиденты" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="539" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lyk_XS_WcnhYMRPYFa0G-12" value="Валютный класс" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="150" width="100" height="42" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
