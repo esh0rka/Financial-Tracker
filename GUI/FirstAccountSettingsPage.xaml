@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Financical_Traker_GUI.GUI.FirstAccountSettingsPage"
+             Title="FirstAccountSettingsPage">
+    <VerticalStackLayout VerticalOptions="Center"
+                         WidthRequest="300">
+        <Entry x:Name="name"
+               Placeholder="Имя пользователя"/>
+        <Picker x:Name="default_currency" Title = "Валюта по умолчанию">
+            <Picker.Items>
+                <x:String>BYN</x:String>
+                <x:String>USD</x:String>
+                <x:String>EUR</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker x:Name="timezone" Title = "Часовой пояс">
+            <Picker.Items>
+                <x:String>UTC+1</x:String>
+                <x:String>UTC+2</x:String>
+                <x:String>UTC+3</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button x:Name="startButton"
+                Text="Начать пользоваться!"
+                BackgroundColor="SlateGray"
+                Clicked="EndRegistration"/>
+        <Label x:Name="errorMessage"
+               Text="errorMessage"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,114 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Financical_Traker_GUI</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>Financical-Traker-GUI</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.financical_traker_gui</ApplicationId>
+		<ApplicationIdGuid>adfab5b1-9693-43e0-afa6-e3343273ffdf</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>Apple Development: brainett13@gmail.com (X5A65S8S4D)</CodesignKey>
+	  <CodesignProvision>iOS Team Provisioning Profile: com.esh0rka.Financical-Traker</CodesignProvision>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Npgsql" Version="7.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Assets\" />
+	  <None Remove="GUI\" />
+	  <None Remove="Models\" />
+	  <None Remove="Core\IncomeManagement\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Assets\" />
+	  <Folder Include="GUI\" />
+	  <Folder Include="Models\" />
+	  <Folder Include="Core\IncomeManagement\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Remove="Resources\Styles\Styles.xaml" />
+	  <EmbeddedResource Remove="Resources\Styles\Colors.xaml" />
+	  <EmbeddedResource Remove="GUI\FirstAccountSettingsPage.xaml" />
+	  <EmbeddedResource Remove="GUI\LeftView.xaml" />
+	  <EmbeddedResource Remove="GUI\LoginPage.xaml" />
+	  <EmbeddedResource Remove="GUI\MainViewPage.xaml" />
+	  <EmbeddedResource Remove="GUI\MiddlePage.xaml" />
+	  <EmbeddedResource Remove="GUI\RightView.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Styles\Styles.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </BundleResource>
+	  <BundleResource Include="Resources\Styles\Colors.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </BundleResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="GUI\FirstAccountSettingsPage.xaml" />
+	  <None Include="GUI\LeftView.xaml" />
+	  <None Include="GUI\LoginPage.xaml" />
+	  <None Include="GUI\MainViewPage.xaml" />
+	  <None Include="GUI\MiddlePage.xaml" />
+	  <None Include="GUI\RightView.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="DataSerializer">
+	    <HintPath>..\DataSerializer\bin\Debug\net7.0\DataSerializer.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+</Project>

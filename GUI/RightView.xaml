@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Financical_Traker_GUI.GUI.RightView"
+             xmlns:Financical_Traker_GUI.Models="clr-namespace:Financical_Traker_GUI.Models">
+    <ContentView.BindingContext>
+        <Financical_Traker_GUI.Models:RightViewModel/>
+    </ContentView.BindingContext>
+    <ScrollView>
+        <StackLayout>
+            <Button Text="Расходы" Clicked="ShowPage1"
+                    Margin="4"
+                    BackgroundColor="#c8834e"/>
+            <StackLayout x:Name="expensePage"
+                         IsVisible="False"
+                         Margin="6">
+                <ListView ItemsSource="{Binding Expenses}"
+                          SelectedItem="{Binding SelectedExpense}">
+                     <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Text}" />
+                                                                    </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button Text="Доходы" Clicked="ShowPage2"
+                    Margin="4"
+                    BackgroundColor="#c8834e"/>
+            <StackLayout x:Name="incomesPage"
+                         IsVisible="False"
+                         Margin="6">
+                <ListView ItemsSource="{Binding Incomes}"
+                          SelectedItem="{Binding SelectedIncome}">
+                     <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Text}" />
+                                                                    </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentView>
+

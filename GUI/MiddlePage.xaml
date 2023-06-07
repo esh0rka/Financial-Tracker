@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Financical_Traker_GUI.GUI.MiddlePage"
+             xmlns:Financical_Traker_GUI.Models="clr-namespace:Financical_Traker_GUI.Models">
+
+    <ContentView.BindingContext>
+        <Financical_Traker_GUI.Models:MiddlePageModel/>
+    </ContentView.BindingContext>
+
+    <Grid RowDefinitions="auto,2*,0.3*,*,*,4*"
+          ColumnDefinitions="*">
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                Text="{Binding ProfileName}"
+                WidthRequest="120"
+                HorizontalOptions="End"
+                BackgroundColor="#3d3f47"
+                Margin="8"
+                Command="{Binding UserClickCommand}"/>
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="{Binding Statistics}"
+               FontSize="35"
+               Margin="15"/>
+        <Grid Grid.Row="2"
+              Grid.Column="0"
+              RowDefinitions="*"
+              ColumnDefinitions="3*,*"
+              Padding="7">
+            <Entry Grid.Row="0"
+                   Grid.Column="0"
+                   x:Name="dataEntry"/>
+            <DatePicker Grid.Row="0"
+                        Grid.Column="1"
+                        Date="{Binding Date}"
+                        MinimumDate="01.01.2000"/>
+        </Grid>
+        <Grid Grid.Row="3"
+              Grid.Column="0"
+              RowDefinitions="*"
+              ColumnDefinitions="*,2*"
+              Margin="8">
+            <Picker Grid.Row="0"
+                    Grid.Column="0"
+                    SelectedItem="{Binding Command}"
+                    FontSize="20">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                      <x:String>Расход</x:String>
+                      <x:String>Доход</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="categoryPicker"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    ItemsSource="{Binding Categories}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding CategoryPick}"
+                    FontSize="20"/>
+        </Grid>
+        <Label Grid.Row="4"
+               Grid.Column="0"
+               x:Name="sum"
+               Text="{Binding Amount}"
+               HorizontalOptions="End"
+               VerticalOptions="End"
+               Padding="10"
+               FontSize="60"/>
+         <Grid Grid.Row="5"
+               Grid.Column="0"
+               RowDefinitions="*,*,*,*"
+               ColumnDefinitions="*,*,*,*"
+               ColumnSpacing="4"
+               RowSpacing="4"
+               Padding="5"
+               VerticalOptions="FillAndExpand">
+             <Button Grid.Row="0"
+                     Grid.Column="0"
+                     Text="7"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="7"/>
+             <Button Grid.Row="0"
+                     Grid.Column="1"
+                     Text="8"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="8"/>
+             <Button Grid.Row="0"
+                     Grid.Column="2"
+                     Text="9"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="9"/>
+             <Button Grid.Row="0"
+                     Grid.Column="3"
+                     Text="←"
+                     FontSize="30"
+                     BackgroundColor="#c8834e"
+                     Command="{Binding RemoveCommand}"/>
+             <Button Grid.Row="1"
+                     Grid.Column="0"
+                     Text="4"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="4"/>
+             <Button Grid.Row="1"
+                     Grid.Column="1"
+                     Text="5"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="5"/>
+             <Button Grid.Row="1"
+                     Grid.Column="2"
+                     Text="6"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="6"/>
+             <Button Grid.Row="2"
+                     Grid.Column="0"
+                     Text="1"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="1"/>
+             <Button Grid.Row="2"
+                     Grid.Column="1"
+                     Text="2"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="2"/>
+             <Button Grid.Row="2"
+                     Grid.Column="2"
+                     Text="3"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="3"/>
+             <Button Grid.Row="3"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Text="0"
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter="0"/>
+             <Button Grid.Row="3"
+                     Grid.Column="2"
+                     Text=","
+                     FontSize="30"
+                     BackgroundColor="#3d3f47"
+                     Command="{Binding AddValueCommand}"
+                     CommandParameter=","/>
+             <Button Grid.Row="1"
+                     Grid.Column="3"
+                     Grid.RowSpan="3"
+                     Text="↲"
+                     FontSize="50"
+                     BackgroundColor="#c8834e"
+                     Command="{Binding EnterCommand}"
+                     CommandParameter="{Binding Source={x:Reference dataEntry}, Path=Text}"/>
+         </Grid>
+    </Grid>
+</ContentView>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Financical_Traker_GUI.GUI.MainViewPage"
+             xmlns:local="clr-namespace:Financical_Traker_GUI.GUI"
+             Title="MainViewPage"
+			 Shell.NavBarIsVisible="False"
+			>
+    <CarouselView x:Name="carouselView"
+				  Loop="False"
+				  HorizontalScrollBarVisibility="Never">
+    <CarouselView.ItemsSource>
+        <x:Array Type="{x:Type ContentView}">
+            <local:LeftView />
+            <local:MiddlePage />
+            <local:RightView />
+        </x:Array>
+    </CarouselView.ItemsSource>
+    <CarouselView.ItemTemplate>
+        <DataTemplate>
+            <ContentView Content="{Binding .}" />
+        </DataTemplate>
+    </CarouselView.ItemTemplate>
+    </CarouselView>
+</ContentPage>

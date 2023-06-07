@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Financical_Traker_GUI.GUI.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <VerticalStackLayout VerticalOptions="Center"
+                         WidthRequest="300">
+        <Entry x:Name="mailEntry"
+               Placeholder="E-mail"
+               Margin="4"
+               />
+        <Entry x:Name="passwordEntry"
+               Placeholder="Password"
+               IsPassword="True"
+               Margin="4"/>
+        <Button Text="Login"
+                BackgroundColor="#3d3f47"
+                Clicked="LoginClick"
+                Margin="3"/>
+        <Button Text="Register"
+                BackgroundColor="#c8834e"
+                Clicked="RegisterClick"
+                Margin="3"/>
+        <Label x:Name="errorMessage"
+               Text=""
+               FontSize="15"
+               Margin="10"
+               HorizontalTextAlignment="Center"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Financical_Traker_GUI.GUI.LeftView"
+             xmlns:Financical_Traker_GUI.Models="clr-namespace:Financical_Traker_GUI.Models">
+    <ContentView.BindingContext>
+        <Financical_Traker_GUI.Models:LeftViewModel/>
+    </ContentView.BindingContext>
+
+
+    <ScrollView>
+        <StackLayout>
+            <Editor x:Name = "categoryNameEditor"
+                    Margin="8"/>
+                <Button Text="Добавить категорию"
+                        Command="{Binding AddCategoryCommand}"
+                        CommandParameter="{Binding Source={x:Reference categoryNameEditor}, Path=Text}"
+                        Margin="8"
+                        BackgroundColor="#c8834e"/>
+            <Button Text="Категории" Clicked="ShowPage1"
+                    Margin="8"
+                    BackgroundColor="#3d3f47"/>
+            <StackLayout x:Name="cactegoryPage"
+                         IsVisible="True"
+                         Margin="6">
+                
+
+                <ListView ItemsSource="{Binding Categories}"
+                          SelectedItem="{Binding SelectedCategory}"
+                          ItemSelected="ListView_ItemSelected">
+                     <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentView>
